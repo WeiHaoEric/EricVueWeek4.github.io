@@ -1,6 +1,7 @@
 import * as Vue from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js";
+import pagination from "./pagination.js";
 
-const itemApp = {
+const itemApp = Vue.createApp({
   data() {
     return {
       baseURL: "https://vue3-course-api.hexschool.io",
@@ -58,6 +59,7 @@ const itemApp = {
 
     this.getItemList();
   },
-};
+});
 
-Vue.createApp(itemApp).mount("#item-app");
+itemApp.component("pagination"); // 全域註冊
+itemApp.mount("#item-app");
