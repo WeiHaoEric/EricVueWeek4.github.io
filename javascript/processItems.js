@@ -44,7 +44,7 @@ const itemApp = Vue.createApp({
             console.log("all items:", res);
             this.itemList = [...res.data.products];
 
-            this.pagination = JSON.parse(JSON.stringify(res.data.products));
+            this.pagination = JSON.parse(JSON.stringify(res.data.pagination));
             console.log("===>this.pagination:", this.pagination);
           } else {
             alert("Failed to get item list");
@@ -59,7 +59,10 @@ const itemApp = Vue.createApp({
 
     this.getItemList();
   },
+
+  
 });
 
-itemApp.component("pagination"); // 全域註冊
+itemApp.component("pagination", pagination); // 全域註冊
+
 itemApp.mount("#item-app");

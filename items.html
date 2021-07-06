@@ -15,7 +15,6 @@
 
   <body>
     <div id="item-app">
-        <!-- <h2>Hello</h2> -->
         <div class="container" style="text-align:center;margin:3rem;">
         <h2 >{{title}}</h2>
         <button type="button" @click="addNewItem" style="color: white; background-color: blue;">建立新的產品</button>
@@ -62,8 +61,14 @@
               </tr>
 
             </tbody>
+          </table>
+            
+            <pagination :pages="pagination" style="display: flex;justify-content: center;"></pagination>
+            
           </div>
-    </div>
+
+          
+        </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js"
