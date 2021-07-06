@@ -7,6 +7,7 @@ const itemApp = {
       apiPath: "hello-eric",
       title: "商品清單",
       itemList: [],
+      pagination: {}, //<-- 提供存放分頁的部分
     };
   },
   methods: {
@@ -20,10 +21,9 @@ const itemApp = {
       console.log("delete item!", delId);
       this.itemList = this.itemList.filter(({ id }) => id !== delId);
 
-      
       axios
         .delete(
-					// /api/:api_path/admin/product/:product_id
+          // /api/:api_path/admin/product/:product_id
           `${this.baseURL}/api/${this.apiPath}/admin/product/${delId}`
         )
         .then((res) => {
@@ -34,25 +34,28 @@ const itemApp = {
           alert(`Error:${rej}`);
         });
     },
+    getItemList() {
+      // get all items
+      axios
+        .get(`${this.baseURL}/api/${this.apiPath}/admin/products?page=1`)
+        .then((res) => {
+          if (res.data.success) {
+            console.log("all items:", res);
+            this.itemList = [...res.data.products];
+
+            // console.log("===>itemList:", this);
+          } else {
+            alert("Failed to get item list");
+          }
+        });
+    },
   },
   created() {
     // set token for axios
     const token = document.cookie.split(";")[0].split("=")[1];
     axios.defaults.headers.common["Authorization"] = token;
 
-    // get all items
-    axios
-      .get(`${this.baseURL}/api/${this.apiPath}/admin/products?page=1`)
-      .then((res) => {
-        if (res.data.success) {
-          console.log("all items:", res);
-          this.itemList = [...res.data.products];
-
-          // console.log("===>itemList:", this);
-        } else {
-          alert("Failed to get item list");
-        }
-      });
+    this.getItemList();
   },
 };
 
