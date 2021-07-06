@@ -15,10 +15,12 @@ const RunLogin = {
         .then((response) => {
           if (response.data.success) {
             console.log(response);
-            
+
             // cookie
             const { expired, token } = response.data;
-            document.cookie = `hexToken = ${token};expires = ${expired}`; //<-- 助教回覆: 寫在一起, safari就能搞定!! https://hackmd.io/@hexschool/B14FofZOu
+            document.cookie = `hexToken = ${token};expires = ${new Date(
+              expired
+            )}`; //<-- 助教回覆: 寫在一起, safari就能搞定!! https://hackmd.io/@hexschool/B14FofZOu
             // document.cookie = `hexToken = ${token}`;
             // document.cookie = `expires = ${expired}`;
 

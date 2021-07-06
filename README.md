@@ -21,7 +21,7 @@
 - [第四週助教詳解](https://courses.hexschool.com/courses/vue-2021/lectures/32739672)
 
 ## Homework
-- [github](#)
+- [github](https://github.com/WeiHaoEric/EricVueWeek4.github.io)
 - [LV1-gitpage作業區](https://weihaoeric.github.io/EricVueWeek4.github.io/)
 
 
