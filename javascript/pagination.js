@@ -18,7 +18,7 @@ export default {
 		clickPage(pId) {  //<-- pagination component定義一個func，並建立 this.$emit的連結，讓子元件的參數可以傳給父元件
 		this.$emit('click-page', pId)
    
-		console.log("click:", pId);
+		console.log("子元件的click:", pId);
 	} },
   template: `<nav aria-label="Page navigation example">
     <ul class="pagination">
