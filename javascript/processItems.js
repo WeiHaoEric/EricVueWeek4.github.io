@@ -35,10 +35,12 @@ const itemApp = Vue.createApp({
           alert(`Error:${rej}`);
         });
     },
-    getItemList() {
+    getItemList(pageId=1) {
+      console.log("父元件的 click:", pageId);
+
       // get all items
       axios
-        .get(`${this.baseURL}/api/${this.apiPath}/admin/products?page=1`)
+        .get(`${this.baseURL}/api/${this.apiPath}/admin/products?page=${pageId}`)
         .then((res) => {
           if (res.data.success) {
             console.log("all items:", res);

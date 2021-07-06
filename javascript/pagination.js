@@ -16,7 +16,7 @@ export default {
   },
   methods: { 
 		clickPage(pId) {  //<-- pagination component定義一個func，並建立 this.$emit的連結，讓子元件的參數可以傳給父元件
-		this.$emit('emit-pages', pId)
+		this.$emit('click-page', pId)
    
 		console.log("click:", pId);
 	} },
