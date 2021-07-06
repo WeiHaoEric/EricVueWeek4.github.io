@@ -1,6 +1,5 @@
-
 // === Eric補充說明 ===
-//注意第20及29行， 
+//注意第20及29行，
 // :class代表class的內容會依照component內的參數，動態的決定是否加入，等號右邊放的是{}，不加會造成問題，要注意！！
 //
 export default {
@@ -15,7 +14,12 @@ export default {
       },
     },
   },
-  methods: {},
+  methods: { 
+		clickPage(pId) {  //<-- pagination component定義一個func，並建立 this.$emit的連結，讓子元件的參數可以傳給父元件
+		this.$emit('emit-pages', pId)
+   
+		console.log("click:", pId);
+	} },
   template: `<nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item" :class= "{'disabled': pages.current_page===1}">
@@ -28,7 +32,10 @@ export default {
 			    :key = "index"
 					class="page-item" 
           :class="{'active':pageId===pages.current_page}">
-					<a class="page-link" href="#">{{pageId}}
+					<a class="page-link" 
+						 href="#"
+						 @click.prevent="clickPage(pageId)"
+					>{{pageId}}
 					</a>
 			</li>
       <li class="page-item" :class= "{'disabled': pages.current_page===pages.total_pages}">
