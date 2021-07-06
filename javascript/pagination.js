@@ -27,7 +27,9 @@ export default {
       <li v-for="(pageId, idx) in pages.total_pages"
 			    :key = "index"
 					class="page-item" 
-          :class="{'active':pageId===pages.current_page}"><a class="page-link" href="#">1</a>
+          :class="{'active':pageId===pages.current_page}">
+					<a class="page-link" href="#">{{pageId}}
+					</a>
 			</li>
       <li class="page-item" :class= "{'disabled': pages.current_page===pages.total_pages}">
         <a class="page-link" href="#" aria-label="Next">
