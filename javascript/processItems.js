@@ -43,7 +43,8 @@ const itemApp = {
             console.log("all items:", res);
             this.itemList = [...res.data.products];
 
-            // console.log("===>itemList:", this);
+            this.pagination = JSON.parse(JSON.stringify(res.data.products));
+            console.log("===>this.pagination:", this.pagination);
           } else {
             alert("Failed to get item list");
           }
