@@ -17,6 +17,12 @@
 - [API說明](https://github.com/hexschool/vue3-course-api-wiki/wiki/管理控制台-%5B需驗證%5D#取得商品列表)
 - [範例code](https://github.com/hexschool/live-vue3-training-chapter-works)
 
+## 課前必看: 助教詳細解釋 props  & emit 的使用方式
+- [第四週助教詳解](https://courses.hexschool.com/courses/vue-2021/lectures/32739672)
+
 ## Homework
-- [LV2-gitpage作業區](https://weihaoeric.github.io/EricVueWeek4.github.io/)
+- [github](#)
+- [LV1-gitpage作業區](https://weihaoeric.github.io/EricVueWeek4.github.io/)
+
+
 
